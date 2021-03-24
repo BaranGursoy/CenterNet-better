@@ -4,8 +4,8 @@ from dl_lib.configs.base_detection_config import BaseDetectionConfig
 
 _config_dict = dict(
     MODEL=dict(
-        # WEIGHTS="detectron2://ImageNetPretrained/MSRA/R-18.pth",
-        WEIGHTS="",
+        WEIGHTS="detectron2://ImageNetPretrained/MSRA/R-18.pth",
+        #WEIGHTS="",
         MASK_ON=False,
         RESNETS=dict(DEPTH=101),
         PIXEL_MEAN=[0.485, 0.456, 0.406],
@@ -49,8 +49,8 @@ _config_dict = dict(
         NUM_WORKERS=2,
     ),
     DATASETS=dict(
-        TRAIN=("coco_2017_train",),
-        TEST=("coco_2017_val",),
+        TRAIN=("baran",),
+        TEST=(),
     ),
     SOLVER=dict(
         OPTIMIZER=dict(
@@ -60,11 +60,11 @@ _config_dict = dict(
         ),
         LR_SCHEDULER=dict(
             GAMMA=0.1,
-            STEPS=(162000, 216000),
-            MAX_ITER=252000,
+            STEPS=(),
+            MAX_ITER=5000,
             WARMUP_ITERS=1000,
         ),
-        IMS_PER_BATCH=64,
+        IMS_PER_BATCH=4,
     ),
     OUTPUT_DIR=osp.join(
         '/data/Outputs/model_logs/playground',
