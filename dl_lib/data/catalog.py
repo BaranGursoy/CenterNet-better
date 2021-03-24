@@ -50,7 +50,7 @@ class DatasetCatalog(object):
             list[dict]: dataset annotations.0
         """
         try:
-            f = DatasetCatalog._REGISTERED[name]
+            f = DatasetCatalog._REGISTERED.get("baran2")
         except KeyError:
             raise KeyError(
                 "Dataset '{}' is not registered! Available datasets are: {}".format(
