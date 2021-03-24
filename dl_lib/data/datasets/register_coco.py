@@ -1,7 +1,7 @@
 # Copyright (c) Facebook, Inc. and its affiliates. All Rights Reserved
 import copy
 
-from dl_lib.data import DatasetCatalog, MetadataCatalog
+from dl_lib.data.catalog import DatasetCatalog, MetadataCatalog
 
 from .coco import load_coco_json, load_sem_seg
 
